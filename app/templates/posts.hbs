@@ -1,25 +1,7 @@
 <section id="home">
-  {{#each model as |post|}}
-
-    <article class="post">
-      <section>
-        <div class="post__content copy">
-          <h1><a href="#" onclick="javascript:void(0)">{{post.title}}</a></h1>
-          {{{post.body}}}
-        </div>
-        <footer>
-          <p>
-            <a href="#" onclick="javascript:void(0)">{{post.developer.username}}</a><br/>
-            <a href="#" onclick="javascript:void(0)">{{ moment-format post.published_at}}</a>
-          </p>
-        </footer>
-      </section>
-    </article>
-
-  {{/each}}
+  {{ post-list posts=model }}
 
   <nav class='pagination'>
-    {{link-to "new TILs" "posts" (query-params page=previousPage) class="pagination_newer"}}
-    {{link-to "Older TILs" "posts" (query-params page=nextPage) class="pagination_older" }}
+    <a class="pagination_older" {{action (route-action 'showMore') }}>Older TILs</a>
   </nav>
 </section>

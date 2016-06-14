@@ -1,12 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  queryParams: {
-    page: {
-      refreshModel: true
-    }
+  page: 1,
+  model() {
+    return this.store.findAll('post');
   },
-  model(params) {
-    return this.store.query('post', params);
+  setupController(controller, model) {
+    controller.setProperties({
+      model: model,
+      posts: model
+    })
+  },
+  actions: {
+    showMore() {
+      const page = this.incrementProperty('page');
+      this.store.query('post', { page });
+    }
   }
 });

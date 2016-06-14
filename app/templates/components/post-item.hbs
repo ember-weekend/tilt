@@ -1,0 +1,14 @@
+<article class="post">
+  <section>
+    <div class="post__content copy">
+      <h1><a href="#" onclick="javascript:void(0)">{{post.title}}</a></h1>
+      {{{post.body}}}
+    </div>
+    <footer>
+      <p>
+        <a href="#" onclick="javascript:void(0)">{{post.developer.username}}</a><br/>
+        <a href="#" onclick="javascript:void(0)">{{ moment-format post.published_at}}</a>
+      </p>
+    </footer>
+  </section>
+</article>
