@@ -9,6 +9,9 @@ module.exports = function(environment) {
     moment: {
       outputFormat: 'MMMM DD,YYYY'
     },
+    'ember-composable-helpers': {
+      only: ['inc']
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

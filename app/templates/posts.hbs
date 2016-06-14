@@ -17,4 +17,9 @@
     </article>
 
   {{/each}}
+
+  <nav class='pagination'>
+    {{link-to "new TILs" "posts" (query-params page=previousPage) class="pagination_newer"}}
+    {{link-to "Older TILs" "posts" (query-params page=nextPage) class="pagination_older" }}
+  </nav>
 </section>

@@ -1,1 +1,1 @@
-toolbox.router.get('/posts', toolbox.cacheFirst)
+toolbox.router.get('/posts', toolbox.fastest)
