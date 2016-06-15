@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  page: 1,
+  page: 2,
   flashMessages: Ember.inject.service(),
   model() {
     return this.store.findAll('post');
