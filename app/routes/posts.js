@@ -4,10 +4,14 @@ export default Ember.Route.extend({
   page: 2,
   flashMessages: Ember.inject.service(),
   model() {
-    return this.store.findAll('post');
+    return this.store.findAll('post').catch(() => {
+      this.get('flashMessages').info('Unable to load posts');
+    });
   },
   afterModel(model) {
-    return Ember.RSVP.all([model.get('developer'), model.get('channel')]);
+    if (model) {
+      return Ember.RSVP.all([model.get('developer'), model.get('channel')]);
+    }
   },
   actions: {
     showMore() {

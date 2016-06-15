@@ -25,17 +25,26 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.manifest = {
+    enabled: true,
+    appcacheFile: '/manifest.appcache',
+    excludePaths: ['index.html', 'tests/index.html', 'robots.txt', 'crossdomain.xml', 'testem.js'],
+    showCreateDate: true,
+    network: ['*'],
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.serviceWorker = {
-      enabled: true,
-      serviceWorkerFile: "service-worker.js",
-      debug: true
-    };
+    //
+    // ENV.serviceWorker = {
+    //   enabled: true,
+    //   serviceWorkerFile: "service-worker.js",
+    //   debug: true
+    // };
   }
 
   if (environment === 'test') {
