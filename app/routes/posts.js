@@ -11,11 +11,15 @@ export default Ember.Route.extend({
   },
   actions: {
     showMore() {
-      this.store.query('post', { page: this.get('page') }).then(() => {
-	this.incrementProperty('page');
+      this.store.query('post', { page: this.get('page') }).then((model) => {
+	hasItems(model) ?  this.incrementProperty('page') : this.get('flashMessages').info('There are no more items');
       }).catch(() => {
 	this.get('flashMessages').info('Connectivity derailed');
       });
     }
   }
 });
+
+function hasItems(model) {
+  return model.get('length') > 0;
+}
