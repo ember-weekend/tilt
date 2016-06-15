@@ -5,6 +5,12 @@
   </div>
 </header>
 
+<div id="flash">
+  {{#each flashMessages.queue as |flash|}}
+    <p>{{flash.message}}</p>
+  {{/each}}
+</div>
+
 <main>
   {{outlet}}
 </main>
