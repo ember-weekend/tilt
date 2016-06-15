@@ -11,4 +11,5 @@ export default Model.extend({
   updated_at: attr(),
   published_at: attr(),
   developer: belongsTo('developer'),
+  channel: belongsTo('channel'),
 });

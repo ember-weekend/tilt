@@ -6,6 +6,9 @@ export default Ember.Route.extend({
   model() {
     return this.store.findAll('post');
   },
+  afterModel(model) {
+    return Ember.RSVP.all([model.get('developer'), model.get('channel')]);
+  },
   actions: {
     showMore() {
       this.store.query('post', { page: this.get('page') }).then(() => {
