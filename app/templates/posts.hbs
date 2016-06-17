@@ -2,6 +2,6 @@
   {{ post-list posts=model }}
 
   <nav class='pagination'>
-    <a class="pagination_older" {{action (route-action 'showMore') }}>Older TILs</a>
+    <a class="pagination_older" {{action (route-action 'showMore' this) }}>Older TILs</a>
   </nav>
 </section>

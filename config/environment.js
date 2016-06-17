@@ -27,10 +27,11 @@ module.exports = function(environment) {
 
   ENV.manifest = {
     enabled: true,
-    appcacheFile: '/manifest.appcache',
-    excludePaths: ['index.html', 'tests/index.html', 'robots.txt', 'crossdomain.xml', 'testem.js'],
+    appcacheFile: '/cache.manifest',
+    excludePaths: ['ember-cli-live-reload.js', 'index.html', 'tests/index.html', 'robots.txt', 'crossdomain.xml', 'testem.js'],
     showCreateDate: true,
     network: ['*'],
+    fallback: ['']
   }
 
   if (environment === 'development') {
@@ -40,11 +41,11 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     //
-    // ENV.serviceWorker = {
-    //   enabled: true,
-    //   serviceWorkerFile: "service-worker.js",
-    //   debug: true
-    // };
+    ENV.serviceWorker = {
+      enabled: true,
+      serviceWorkerFile: "service-worker.js",
+      debug: true
+    };
   }
 
   if (environment === 'test') {

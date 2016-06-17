@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="manifest.appcache">
+<html manifest="cache.manifest">
   <head>
     <script type='text/javascript'>
       window.addEventListener('load',function(e){window.applicationCache.addEventListener('updateready',function(e){if (window.applicationCache.status==window.applicationCache.UPDATEREADY){window.applicationCache.swapCache();window.location.reload();}},false);},false);
@@ -12,6 +12,22 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" name="viewport">
     <link href="//fonts.googleapis.com/css?family=Raleway:700,900" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lora:400,700italic,700,400italic" rel="stylesheet" type="text/css">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script type="text/javascript">
+      function logEvent(event) {
+        console.log(event.type);
+      }
+
+      window.applicationCache.addEventListener('checking',logEvent,false);
+      window.applicationCache.addEventListener('noupdate',logEvent,false);
+      window.applicationCache.addEventListener('downloading',logEvent,false);
+      window.applicationCache.addEventListener('cached',logEvent,false);
+      window.applicationCache.addEventListener('updateready',logEvent,false);
+      window.applicationCache.addEventListener('obsolete',logEvent,false);
+      window.applicationCache.addEventListener('error',logEvent,false);
+
+    </script>
 
     {{content-for "head"}}
 

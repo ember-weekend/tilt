@@ -1,3 +1,5 @@
-import ActiveModelAdapter from 'active-model-adapter';
+import LFAdapter from 'ember-localforage-adapter/adapters/localforage';
 
-export default ActiveModelAdapter.extend();
+export default LFAdapter.extend({
+  namespace: 'posts'
+});
