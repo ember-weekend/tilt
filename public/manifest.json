@@ -1,0 +1,24 @@
+{
+  "short_name": "Tilt",
+  "name": "Today I Learnt",
+  "icons": [
+    {
+      "src": "til_appicons/til_2b_icon_96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "til_appicons/til_2b_icon_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "til_appicons/til_2b_icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
