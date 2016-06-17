@@ -28,7 +28,15 @@ module.exports = function(environment) {
   ENV.manifest = {
     enabled: true,
     appcacheFile: '/cache.manifest',
-    excludePaths: ['ember-cli-live-reload.js', 'index.html', 'tests/index.html', 'robots.txt', 'crossdomain.xml', 'testem.js'],
+    excludePaths: [
+      'ember-cli-live-reload.js',
+      'index.html',
+      'tests/index.html',
+      'robots.txt',
+      'crossdomain.xml',
+      'testem.js',
+      'til_appicons'
+    ],
     showCreateDate: true,
     network: ['*'],
     fallback: ['']
