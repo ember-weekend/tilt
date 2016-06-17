@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from 'tilt/config/environment';
 
 export default Ember.Route.extend({
   page: 2,
@@ -11,7 +12,7 @@ export default Ember.Route.extend({
   },
   actions: {
     showMore(controller) {
-      return this.get('ajax').request('/posts', {
+      return this.get('ajax').request(`${config.API_URL}/posts.json`, {
         data: { page: this.get('page') },
         timeout: 1000
       }).then((response) => {

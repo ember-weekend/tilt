@@ -49,6 +49,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     //
+    ENV.API_URL = 'http://localhost:4200'
     ENV.serviceWorker = {
       enabled: true,
       serviceWorkerFile: "service-worker.js",
@@ -69,7 +70,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.API_URL = 'https://til.hashrocket.com'
   }
 
   return ENV;

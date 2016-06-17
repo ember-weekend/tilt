@@ -1,9 +1,10 @@
 import Ember from 'ember';
+import config from 'tilt/config/environment';
 
 export default Ember.Route.extend({
   ajax: Ember.inject.service(),
   beforeModel() {
-    return this.get('ajax').request('/posts', { timeout: 1000 }).then((response) => {
+    return this.get('ajax').request(`${config.API_URL}/posts.json`, { timeout: 1000 }).then((response) => {
       const channelPromises = response.channels.map(c => {
         if (this.store.peekRecord('channel', c.id)) { return; }
 
