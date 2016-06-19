@@ -24,6 +24,7 @@
     "broccoli-manifest": "0.0.7",
     "broccoli-merge-trees": "^1.1.1",
     "broccoli-serviceworker": "0.1.0",
+    "ember-add-to-homescreen": "0.1.2",
     "ember-ajax": "^2.4.1",
     "ember-cli": "2.4.2",
     "ember-cli-app-version": "^1.0.0",
