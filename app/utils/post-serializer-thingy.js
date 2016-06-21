@@ -39,7 +39,6 @@ export default function postSerializerThingy(response) {
         post.set('developer', dev);
       }
 
-      this.incrementProperty('page');
       post.save();
     });
   });

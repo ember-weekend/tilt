@@ -1,7 +1,10 @@
 <section id="home">
-  {{ post-list posts=model }}
+
+  {{ post-list posts=pagedContent}}
 
   <nav class='pagination'>
-    <a class="pagination_older" {{action (route-action 'showMore' this) }}>Older TILs</a>
+    <a class="pagination_older" {{action 'showMore'}}>
+      Older TILs
+    </a>
   </nav>
 </section>
