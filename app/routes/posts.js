@@ -4,7 +4,9 @@ import postSerializer from 'tilt/utils/post-serializer-thingy';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('post').catch(() => {
+    return this.store.findAll('post').then((models)=>{
+      return models.sortBy('created_at:desc');
+    }).catch(() => {
       this.get('flashMessages').info('Unable to load posts');
     });
   }
